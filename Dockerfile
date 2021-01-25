@@ -9,9 +9,4 @@ COPY . .
 RUN composer install
 
 EXPOSE 8000
-
-RUN cp .env.example .env && \
-    php artisan key:generate && \
-    php artisan migrate
-
 CMD php artisan serve --host=0.0.0.0
